@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Оплата</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!--Header-->
+  <style>
+    :root {
+      --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    }
+    
+    .header-container {
+      position: relative;
+      width: clamp(320px, 100vw, 1920px);
+      height: 80px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .header-container * {
+      box-sizing: border-box;
+    }
+    
+    .header-wrapper {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+    }
+    
+    .contact-box {
+      position: absolute;
+      width: 380px;
+      height: 80px;
+      top: 0;
+      right: 120px;
+      background: #093691;
+      border-radius: 10px;
+      z-index: 9;
+    }
+    
+    .vertical-line {
+      position: absolute;
+      width: 1px;
+      height: 60px;
+      top: 10px;
+      right: 314px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/0005791b-c0ec-4e0b-9519-62863274f478.png) no-repeat center;
+      background-size: cover;
+      z-index: 12;
+    }
+    
+    .logo {
+      position: absolute;
+      width: 204px;
+      height: 40px;
+      top: 20px;
+      left: 120px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/463d65f9-b8ab-48db-a751-f83442f7983b.png) no-repeat center;
+      background-size: cover;
+      z-index: 16;
+    }
+    
+    .search-box {
+      position: relative;
+      width: 486px;
+      height: 38px;
+      top: 21px;
+      left: 721px;
+      background: #ffffff;
+      border: 1px solid #093691;
+      border-radius: 10px;
+      z-index: 14;
+    }
+    
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 144px;
+      height: 38px;
+      top: 21px;
+      left: 1063px;
+      padding: 19px 37px;
+      background: #093691;
+      border: 1px solid #061a42;
+      border-radius: 10px;
+      z-index: 18;
+      cursor: pointer;
+    }
+    
+    .search-text {
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-right: 16px;
+    }
+    
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/1d54aa97-045e-43b2-b519-7fb1bfd4fdbc.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+    
+    .personal-account {
+      position: absolute;
+      top: 30px;
+      left: 1257px;
+      color: #093691;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 2;
+    }
+    
+    .phone-number {
+      position: absolute;
+      top: 30px;
+      right: 174px;
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 10;
+    }
+    
+    .email {
+      position: absolute;
+      top: 30px;
+      right: 360px;
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 13;
+    }
+    
+    .search-icon-small {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30px;
+      left: 1166px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/aa8121a5-a8da-46ff-aba0-3baf1daad195.png) no-repeat center;
+      background-size: 100% 100%;
+      z-index: 17;
+    }
+    
+    .contacts {
+      position: absolute;
+      top: 31px;
+      left: 591px;
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      z-index: 1;
+    }
+    
+    .catalog-dropdown {
+      position: absolute;
+      top: 31px;
+      left: 354px;
+      z-index: 3;
+    }
+    
+    .catalog-text {
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    
+    .dropdown-icon {
+      position: absolute;
+      width: 9px;
+      height: 6px;
+      top: 7px;
+      right: 0;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/1a5e2971-5588-40a9-b780-ea9cd7793f31.png) no-repeat center;
+      background-size: cover;
+    }
+    
+    .about-dropdown {
+      position: absolute;
+      top: 31px;
+      left: 458px;
+      z-index: 6;
+    }
+    
+    .about-text {
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    
+    .search-placeholder {
+      position: absolute;
+      color: #9d9d9d;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      z-index: 15;
+    }
+    
+    .free-call {
+      position: absolute;
+      top: 51px;
+      right: 164px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: Inter, var(--default-font-family);
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12px;
+      z-index: 11;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <header class="header-container">
+      <div class="header-wrapper"></div>
+      <div class="contact-box"></div>
+      <div class="vertical-line"></div>
+      <div class="logo" role="img" aria-label="Company logo"></div>
+      <form class="search-box" role="search">
+        <label for="search-input" class="visually-hidden">Search by VIN, article, or brand</label>
+        <input type="text" id="search-input" class="search-placeholder" placeholder="Search by VIN, article, or brand" aria-label="Search by VIN, article, or brand">
+      </form>
+      <button class="search-button" aria-label="Perform search">
+        <span class="search-text">Поиск</span>
+        <div class="search-icon" aria-hidden="true"></div>
+      </button>
+      <a href="/authorisation.html" class="personal-account">Личный кабинет</a>
+      <a href="tel:+78005502275" class="phone-number">+7-800-550-22-75</a>
+      <a href="mailto:sale@forkliftsib.ru" class="email">sale@forkliftsib.ru</a>
+      <div class="search-icon-small" aria-hidden="true"></div>
+      <nav>
+        <a href="/contacts.html" class="contacts">Контакты</a>
+        <div class="catalog-dropdown">
+          <a href="/f-catalog.html" class="catalog-text">Каталог</a>
+          <div class="dropdown-icon" aria-hidden="true"></div>
+        </div>
+        <div class="about-dropdown">
+          <a href="/about.html" class="about-text">О компании</a>
+          <div class="dropdown-icon" aria-hidden="true"></div>
+        </div>
+      </nav>
+      <span class="free-call">Звонок по России беспатный</span>
+    </header>
+    <!--end header-->
+    <style>
+        :root {
+        --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+        --primary-color: #093691;
+        --secondary-color: #ffffff;
+        --text-color: #1e1b1b;
+        --light-text: #b0b0b0;
+        }
+        .payment-section {
+        max-width: 1920px;
+        margin: 0 auto;
+        font-family: var(--default-font);
+        color: var(--text-color);
+        }
+        .breadcrumb {
+          padding: 20px 120px;
+          font-size: 12px;
+        }
+        
+        .breadcrumb__link {
+          color: var(--text-color);
+          text-decoration: none;
+        }
+        
+        .breadcrumb__current {
+          font-weight: 600;
+        }
+        
+        .main-content {
+          padding: 0 120px;
+        }
+        
+        .main-content__title {
+          font-size: 36px;
+          font-weight: 400;
+          margin-bottom: 40px;
+        }
+        
+        .main-content__description {
+          font-size: 20px;
+          line-height: 1.5;
+          margin-bottom: 60px;
+        }
+        
+        .company-info {
+          background-color: var(--secondary-color);
+          border-radius: 20px;
+          padding: 60px;
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12);
+        }
+        
+        .company-info__title {
+          font-size: 26px;
+          font-weight: 600;
+          margin-bottom: 40px;
+        }
+        
+        .company-info__row {
+          display: flex;
+          margin-bottom: 20px;
+        }
+        
+        .company-info__label {
+          width: 200px;
+          font-weight: 400;
+        }
+        
+        .company-info__value {
+          flex-grow: 1;
+        }
+        
+        </style>
+    <!--Main-->
+    <section class="payment-section">
+        <main class="main-content">
+            <h1 class="main-content__title">Способы оплаты</h1>
+            <p class="main-content__description">
+              Внимание! Обращаем Ваше внимание, что оплату заказов следует производить ТОЛЬКО в офисах продаж. Предложения оплатить заказ переводом на банковскую карту частного лица или по номеру электронного кошелька не являются предложениями нашей компании, а принадлежат возможным мошенническим схемам, со всеми вытекающими из этого последствиями.
+            </p>
+        
+            <section class="company-info">
+              <h2 class="company-info__title">ООО "Маркет Форклифт"</h2>
+              <div class="company-info__row">
+                <span class="company-info__label">Юридический адрес:</span>
+                <span class="company-info__value">630108, г. Новосибирск, ул.Станционная, здание 17</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Фактический адрес:</span>
+                <span class="company-info__value">630108, г. Новосибирск, ул.Станционная, здание 17</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Почтовый адрес:</span>
+                <span class="company-info__value">630108, г. Новосибирск, а/я 146</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Телефон, e-mail:</span>
+                <span class="company-info__value">(383)292-10-31, 9@2921031.ru</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">ИНН/КПП:</span>
+                <span class="company-info__value">5404434034 / 540401001</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Расчетный счет:</span>
+                <span class="company-info__value">40702810501000003927 в ПАО БАНК "ЛЕВОБЕРЕЖНЫЙ" г. Новосибирск</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Кор. Счет:</span>
+                <span class="company-info__value">30101810100000000850</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">БИК:</span>
+                <span class="company-info__value">045004850</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">ОГРН:</span>
+                <span class="company-info__value">1115476036213</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">ОКВЭД:</span>
+                <span class="company-info__value">50.30</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">ОКПО:</span>
+                <span class="company-info__value">69860578</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Директор:</span>
+                <span class="company-info__value">Жашкова Татьяна Анатольевна</span>
+              </div>
+              <div class="company-info__row">
+                <span class="company-info__label">Действует на основании:</span>
+                <span class="company-info__value">Устава</span>
+              </div>
+            </section>
+          </main>
+    </section>
+    <!--end Main-->
+    <!--Footer-->
+    <style>
+      :root {
+        --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
+      }
+      
+      .footer-container {
+        position: relative;
+        width: clamp(320px, 100vw, 1920px);
+        height: 335px;
+        margin: 0 auto;
+        font-size: 0;
+        overflow: hidden;
+      }
+      
+      .footer-container * {
+        box-sizing: border-box;
+      }
+      
+      .footer-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #093691;
+      }
+      
+      .footer-logo {
+        position: absolute;
+        width: 20.73%;
+        height: 22.99%;
+        top: 8.96%;
+        left: 73.02%;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/d2a8db10-9396-46d2-ab4c-0f34f098daee.png) no-repeat center;
+        background-size: cover;
+      }
+      
+      .footer-heading {
+        position: absolute;
+        font: 600 20px/18px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-heading-catalog { left: 6.25%; top: 14.93%; }
+      .footer-heading-about { left: 28.49%; top: 14.93%; }
+      .footer-heading-account { left: 50.78%; top: 14.93%; }
+      
+      .footer-link {
+        position: absolute;
+        font: 400 16px/14px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-link-maintenance { left: 6.25%; top: 26.27%; }
+      .footer-link-catalog { left: 6.25%; top: 34.63%; }
+      .footer-link-oils { left: 6.25%; top: 42.99%; }
+      .footer-link-equipment { left: 6.25%; top: 51.34%; }
+      
+      .footer-link-branches { left: 28.49%; top: 26.27%; }
+      .footer-link-delivery { left: 28.49%; top: 34.63%; }
+      .footer-link-payment { left: 28.49%; top: 42.99%; }
+      .footer-link-contact { left: 28.49%; top: 51.34%; }
+      
+      .footer-link-register { left: 50.78%; top: 26.27%; }
+      .footer-link-login { left: 50.78%; top: 34.63%; }
+      
+      .footer-address {
+        position: absolute;
+        width: 418px;
+        top: 37.91%;
+        left: 73.02%;
+        font: 400 20px/24.205px Inter, var(--default-font-family);
+        color: #fff;
+      }
+      
+      .footer-phone {
+        position: absolute;
+        top: 57.01%;
+        left: 73.02%;
+        font: 700 20px/24px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-copyright {
+        position: absolute;
+        font: 400 12px/10.8px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-copyright-company { left: 6.25%; top: 82.09%; }
+      .footer-copyright-privacy { left: 28.49%; top: 82.09%; }
+      .footer-copyright-terms { left: 50.78%; top: 82.09%; }
+      .footer-copyright-bonus { left: 73.02%; top: 82.09%; }
+      
+      .footer-credit {
+        position: absolute;
+        left: 6.25%;
+        bottom: 28px;
+        font: 400 12px/10.8px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      </style>
+      
+      <footer class="footer-container">
+        <div class="footer-background"></div>
+        <div class="footer-logo" role="img" aria-label="Company logo"></div>
+        
+        <nav>
+          <h2 class="footer-heading footer-heading-catalog">Каталог</h2>
+          <ul>
+            <li><a href="#" class="footer-link footer-link-maintenance">Запчасти для технического обслуживания</a></li>
+            <li><a href="/s-catalog.html" class="footer-link footer-link-catalog">Каталог запчастей</a></li>
+            <li><a href="/f-catalog.html" class="footer-link footer-link-oils">Масла и технические жидкости</a></li>
+            <li><a href="#" class="footer-link footer-link-equipment">Спец Техника</a></li>
+          </ul>
+      
+          <h2 class="footer-heading footer-heading-about">О компании</h2>
+          <ul>
+            <li><a href="#" class="footer-link footer-link-branches">Адреса филиалов</a></li>
+            <li><a href="/delivery.html" class="footer-link footer-link-delivery">Доставка</a></li>
+            <li><a href="/payment.html" class="footer-link footer-link-payment">Оплата</a></li>
+            <li><a href="/contacts.html" class="footer-link footer-link-contact">Контактная информация</a></li>
+          </ul>
+      
+          <h2 class="footer-heading footer-heading-account">Личный кабинет</h2>
+          <ul>
+            <li><a href="/auth-connection.html" class="footer-link footer-link-register">Регистрация</a></li>
+            <li><a href="/authorisation.html" class="footer-link footer-link-login">Вход</a></li>
+          </ul>
+        </nav>
+      
+        <address class="footer-address">
+          630108, г. Новосибирск, ул.Станционная, здание 17/1, этаж 2
+        </address>
+      
+        <a href="tel:+73833751330" class="footer-phone">8(383)375-13-30</a>
+      
+        <small class="footer-copyright footer-copyright-company">© ООО «Форклифт» 2024</small>
+        <small class="footer-copyright footer-copyright-privacy">Политика конфиденциальности</small>
+        <small class="footer-copyright footer-copyright-terms">Соглашение об использовании личного кабинета</small>
+        <small class="footer-copyright footer-copyright-bonus">Положение о бонусной программе "Бонус Форклифт"</small>
+      
+        <small class="footer-credit">Сайт разработан Omega IT</small>
+      </footer>
+      <!--end footer-->
+</body>
+</html>

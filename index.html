@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форклифт Главная</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <!--Header-->
+  <style>
+    :root {
+      --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+        "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+        "Source Han Sans CN", sans-serif;
+    }
+    
+    .header-container {
+      position: relative;
+      width: clamp(320px, 100vw, 1920px);
+      height: 80px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    
+    .header-container * {
+      box-sizing: border-box;
+    }
+    
+    .header-wrapper {
+      position: absolute;
+      inset: 0;
+      background: #ffffff;
+    }
+    
+    .contact-box {
+      position: absolute;
+      width: 380px;
+      height: 80px;
+      top: 0;
+      right: 120px;
+      background: #093691;
+      border-radius: 10px;
+      z-index: 9;
+    }
+    
+    .vertical-line {
+      position: absolute;
+      width: 1px;
+      height: 60px;
+      top: 10px;
+      right: 314px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/0005791b-c0ec-4e0b-9519-62863274f478.png) no-repeat center;
+      background-size: cover;
+      z-index: 12;
+    }
+    
+    .logo {
+      position: absolute;
+      width: 204px;
+      height: 40px;
+      top: 20px;
+      left: 120px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/463d65f9-b8ab-48db-a751-f83442f7983b.png) no-repeat center;
+      background-size: cover;
+      z-index: 16;
+    }
+    
+    .search-box {
+      position: relative;
+      width: 486px;
+      height: 38px;
+      top: 21px;
+      left: 721px;
+      background: #ffffff;
+      border: 1px solid #093691;
+      border-radius: 10px;
+      z-index: 14;
+    }
+    
+    .search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      width: 144px;
+      height: 38px;
+      top: 21px;
+      left: 1063px;
+      padding: 19px 37px;
+      background: #093691;
+      border: 1px solid #061a42;
+      border-radius: 10px;
+      z-index: 18;
+      cursor: pointer;
+    }
+    
+    .search-text {
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      margin-right: 16px;
+    }
+    
+    .search-icon {
+      width: 24px;
+      height: 24px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/1d54aa97-045e-43b2-b519-7fb1bfd4fdbc.png) no-repeat center;
+      background-size: 100% 100%;
+    }
+    
+    .personal-account {
+      position: absolute;
+      top: 30px;
+      left: 1257px;
+      color: #093691;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 2;
+    }
+    
+    .phone-number {
+      position: absolute;
+      top: 30px;
+      right: 174px;
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 10;
+    }
+    
+    .email {
+      position: absolute;
+      top: 30px;
+      right: 360px;
+      color: #ffffff;
+      font-family: Inter, var(--default-font-family);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 19px;
+      z-index: 13;
+    }
+    
+    .search-icon-small {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 30px;
+      left: 1166px;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/aa8121a5-a8da-46ff-aba0-3baf1daad195.png) no-repeat center;
+      background-size: 100% 100%;
+      z-index: 17;
+    }
+    
+    .contacts {
+      position: absolute;
+      top: 31px;
+      left: 591px;
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      z-index: 1;
+    }
+    
+    .catalog-dropdown {
+      position: absolute;
+      top: 31px;
+      left: 354px;
+      z-index: 3;
+    }
+    
+    .catalog-text {
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    
+    .dropdown-icon {
+      position: absolute;
+      width: 9px;
+      height: 6px;
+      top: 7px;
+      right: 0;
+      background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/1a5e2971-5588-40a9-b780-ea9cd7793f31.png) no-repeat center;
+      background-size: cover;
+    }
+    
+    .about-dropdown {
+      position: absolute;
+      top: 31px;
+      left: 458px;
+      z-index: 6;
+    }
+    
+    .about-text {
+      color: #1e1b1b;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    
+    .search-placeholder {
+      position: absolute;
+      color: #9d9d9d;
+      font-family: Inter, var(--default-font-family);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      z-index: 15;
+    }
+    
+    .free-call {
+      position: absolute;
+      top: 51px;
+      right: 164px;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: Inter, var(--default-font-family);
+      font-size: 10px;
+      font-weight: 400;
+      line-height: 12px;
+      z-index: 11;
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <header class="header-container">
+      <div class="header-wrapper"></div>
+      <div class="contact-box"></div>
+      <div class="vertical-line"></div>
+      <div class="logo" role="img" aria-label="Company logo"></div>
+      <form class="search-box" role="search">
+        <label for="search-input" class="visually-hidden">Search by VIN, article, or brand</label>
+        <input type="text" id="search-input" class="search-placeholder" placeholder="Search by VIN, article, or brand" aria-label="Search by VIN, article, or brand">
+      </form>
+      <button class="search-button" aria-label="Perform search">
+        <span class="search-text">Поиск</span>
+        <div class="search-icon" aria-hidden="true"></div>
+      </button>
+      <a href="/authorisation.html" class="personal-account">Личный кабинет</a>
+      <a href="tel:+78005502275" class="phone-number">+7-800-550-22-75</a>
+      <a href="mailto:sale@forkliftsib.ru" class="email">sale@forkliftsib.ru</a>
+      <div class="search-icon-small" aria-hidden="true"></div>
+      <nav>
+        <a href="/contacts.html" class="contacts">Контакты</a>
+        <div class="catalog-dropdown">
+          <a href="/f-catalog.html" class="catalog-text">Каталог</a>
+          <div class="dropdown-icon" aria-hidden="true"></div>
+        </div>
+        <div class="about-dropdown">
+          <a href="/about.html" class="about-text">О компании</a>
+          <div class="dropdown-icon" aria-hidden="true"></div>
+        </div>
+      </nav>
+      <span class="free-call">Звонок по России беспатный</span>
+    </header>
+    <!--end header-->
+    <!--Main-->
+    <style>
+      :root {
+        --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+      }
+      
+      .sale-container {
+        position: relative;
+        width: 100%;
+        height: 1590px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      
+      .sale-container * {
+        box-sizing: border-box;
+      }
+      
+      .hero-section {
+        position: relative;
+        width: 1880px;
+        height: 620px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      
+      .hero-background {
+        position: absolute;
+        width: 1880px;
+        height: 620px;
+        top: 0;
+        left: 0;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/1e227b1e-3d44-4936-9943-78a778a5320d.png) no-repeat center;
+        background-size: cover;
+        border-radius: 20px;
+      }
+      
+      .hero-content {
+        position: absolute;
+        width: 1802px;
+        height: 843px;
+        top: -249px;
+        left: 0;
+        z-index: 31;
+      }
+      
+      .hero-blur-1 {
+        position: absolute;
+        width: 1024px;
+        height: 539px;
+        top: 0;
+        left: 778px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/498ed5ec-b20a-4764-92f3-844223fb59b1.png) no-repeat center;
+        background-size: cover;
+        filter: blur(60px);
+      }
+      
+      .hero-blur-2 {
+        position: absolute;
+        width: 383px;
+        height: 383px;
+        top: 112px;
+        left: 0;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/4397418d-0daf-45be-9f2f-f253a5c0d3c5.png) no-repeat center;
+        background-size: cover;
+        filter: blur(60px);
+        border-radius: 50%;
+      }
+      
+      .hero-image {
+        position: absolute;
+        width: 858px;
+        height: 568px;
+        top: 275px;
+        left: 822px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/41e3d20f-5b6a-42ba-b32a-804fb7680373.png) no-repeat center;
+        background-size: cover;
+      }
+      
+      .hero-title {
+        position: absolute;
+        width: 520px;
+        top: 389px;
+        left: 100px;
+        color: #ffffff;
+        font-family: Intro, var(--default-font);
+        font-size: 60px;
+        font-weight: 400;
+        line-height: 54px;
+      }
+      
+      .hero-subtitle {
+        position: absolute;
+        width: 398px;
+        top: 517px;
+        left: 100px;
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+      
+      .cta-section {
+        position: absolute;
+        width: 1680px;
+        height: 539px;
+        top: 389px;
+        left: 100px;
+      }
+      
+      .cta-blur {
+        position: absolute;
+        width: 1024px;
+        height: 539px;
+        top: 0;
+        left: 39px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/2e3762d5-904b-458e-9917-a474278bbc69.png) no-repeat center;
+        background-size: cover;
+        filter: blur(60px);
+      }
+      
+      .cta-button {
+        position: absolute;
+        width: 325px;
+        height: 60px;
+        top: 43px;
+        left: 0;
+        background: #ffffff;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        padding: 18px 26px;
+      }
+      
+      .cta-text {
+        color: #1e1b1b;
+        font-family: Inter, var(--default-font);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+      }
+      
+      .cta-icon {
+        width: 48px;
+        height: 48px;
+        margin-left: 10px;
+        background: #093691;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .cta-icon-image {
+        width: 31px;
+        height: 31px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/350ce733-ddfe-467f-bb98-1177f15e10c2.png) no-repeat center;
+        background-size: cover;
+      }
+      
+      .progress-bar {
+        position: absolute;
+        width: 720px;
+        height: 6px;
+        top: 205px;
+        left: 0;
+        background: #ffffff;
+        border-radius: 10px;
+      }
+      
+      .progress-fill {
+        width: 206px;
+        height: 6px;
+        background: #3e7dff;
+        border-radius: 10px;
+      }
+      
+      .progress-step {
+        position: absolute;
+        width: 290px;
+        height: 6px;
+        top: 205px;
+        background: #ffffff;
+        border-radius: 10px;
+      }
+      
+      .progress-step-2 { left: 750px; }
+      .progress-step-3 { left: 1070px; }
+      .progress-step-4 { left: 1390px; }
+      
+      .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 1680px;
+        margin: 100px 0 0 100px;
+      }
+      
+      .product-card {
+        position: relative;
+        width: 825px;
+        height: 420px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .product-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      }
+      
+      .product-title {
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 31px;
+      }
+      
+      .product-icon {
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        bottom: 40px;
+        right: 40px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .product-icon img {
+        width: 37px;
+        height: 37px;
+      }
+      
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      </style>
+    <section class="sale-container">
+      <div class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+          <div class="hero-blur-1"></div>
+          <div class="hero-blur-2"></div>
+          <div class="hero-image"></div>
+          <h1 class="hero-title">Распродажа техники</h1>
+          <p class="hero-subtitle">Кратко условия акции кратко условия акции кратко</p>
+        </div>
+        <div class="cta-section">
+          <div class="cta-blur"></div>
+          <button class="cta-button">
+            <span class="cta-text">Узнать стоимость</span>
+            <span class="cta-icon">
+              <span class="cta-icon-image"></span>
+            </span>
+          </button>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+          <div class="progress-step progress-step-2"></div>
+          <div class="progress-step progress-step-3"></div>
+          <div class="progress-step progress-step-4"></div>
+        </div>
+      </div>
+    
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/05744cbe-7729-47e5-aff9-d07b7025574a.png" alt="Запчасти для технического обслуживания" class="product-image">
+          <div class="product-overlay">
+            <h2 class="product-title">Запчасти для технического обслуживания</h2>
+            <div class="product-icon">
+              <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/fad69e80-ebd9-4ff6-bfbb-76453f822ad1.png" alt="">
+            </div>
+          </div>
+        </article>
+    
+        <article class="product-card">
+          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/d4385bb7-a363-4cf0-bfe3-49fd0bec75ad.png" alt="Масла и технические жидкости" class="product-image">
+          <div class="product-overlay">
+            <h2 class="product-title">Масла и технические жидкости</h2>
+            <div class="product-icon">
+              <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/660a26cf-b355-4f96-ba9e-d7d40da26210.png" alt="">
+            </div>
+          </div>
+        </article>
+    
+        <article class="product-card">
+          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/0afd9b17-47b6-440d-b68e-51153162fd70.png" alt="ОЕМ запчасти" class="product-image">
+          <div class="product-overlay">
+            <h2 class="product-title">ОЕМ запчасти</h2>
+            <div class="product-icon">
+              <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/40a5bef1-5fe4-4d47-b903-5d7966acb374.png" alt="">
+            </div>
+          </div>
+        </article>
+    
+        <article class="product-card">
+          <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/314a818b-abc8-430a-8874-a616674cd090.png" alt="Шины и диски" class="product-image">
+          <div class="product-overlay">
+            <h2 class="product-title">Шины и диски</h2>
+            <div class="product-icon">
+              <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/a8ca637d-b219-46c6-bf55-0233b87e0bd6.png" alt="">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <style>
+      :root {
+        --default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
+      }
+      
+      .company-info {
+        position: relative;
+        width: 1880px;
+        height: 1501px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      
+      .company-info * {
+        box-sizing: border-box;
+      }
+      
+      .company-info input,
+      .company-info select,
+      .company-info textarea,
+      .company-info button {
+        outline: 0;
+      }
+      
+      .company-info .hero-image {
+        position: absolute;
+        width: 100%;
+        height: 85.28%;
+        top: 0;
+        left: 0;
+        border-radius: 20px;
+        -webkit-mask-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/5cf7b475-4abc-40cd-bb01-d0a8c1b60117.png);
+        -webkit-mask-size: cover;
+      }
+      
+      .company-info .hero-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100.29%;
+        top: -0.04%;
+        left: 0%;
+        z-index: 1;
+        border-radius: 20px;
+      }
+      
+      .company-info .hero-content {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        border-radius: 20px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/92529291-4223-44f4-895a-d26ae12ae996.png) no-repeat center / 100% 100%;
+      }
+      
+      .company-title {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        color: #ffffff;
+        font-family: Intro, var(--default-font);
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 36px;
+        z-index: 4;
+      }
+      
+      .company-description {
+        position: absolute;
+        width: 1055px;
+        top: 176px;
+        left: 100px;
+        font-family: Inter, var(--default-font);
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 31px;
+        color: #ffffff;
+        z-index: 5;
+      }
+      
+      .info-box {
+        position: absolute;
+        width: 825px;
+        height: 520px;
+        top: 247px;
+        left: 955px;
+        background: #ffffff;
+        z-index: 6;
+        border-radius: 20px;
+        padding: 80px 60px;
+      }
+      
+      .info-content {
+        font-family: Inter, var(--default-font);
+        font-size: 20px;
+        line-height: 24.205px;
+        color: #1e1b1b;
+      }
+      
+      .highlight {
+        color: #3e7dff;
+        font-weight: 700;
+      }
+      
+      .quote {
+        position: absolute;
+        bottom: 40px;
+        right: 60px;
+        color: #1e1b1b;
+        font-family: Inter, var(--default-font);
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 31.466px;
+        text-align: right;
+      }
+      
+      .company-image {
+        position: absolute;
+        width: 825px;
+        height: 520px;
+        top: 247px;
+        left: 100px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/d68cba62-0672-4e2d-bef4-13a44d6da15c.png) no-repeat center / cover;
+        border-radius: 20px;
+        z-index: 7;
+      }
+      
+      .location-info {
+        position: absolute;
+        top: 807px;
+        left: 100px;
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 31px;
+        z-index: 10;
+      }
+      
+      .location-icon {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: 807px;
+        background-size: cover;
+        z-index: 14;
+        overflow: hidden;
+      }
+      
+      .location-icon-1 { left: 1177px; background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/a8ead244-3d69-4010-acee-1501a1073f52.png); }
+      .location-icon-2 { left: 1444px; background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/f2f7b29c-b778-493b-bde2-6f1016ba3a96.png); }
+      .location-icon-3 { left: 1619px; background-image: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/d456bad6-d2b8-4c85-abd6-4cb58509e73d.png); }
+      
+      .location-name {
+        position: absolute;
+        top: 808px;
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 31px;
+      }
+      
+      .location-name-1 { left: 1219px; }
+      .location-name-2 { left: 1486px; }
+      .location-name-3 { left: 1661px; }
+      
+      .company-info .contact-section {
+        position: absolute;
+        width: 1680px;
+        height: 533px;
+        top: 968px;
+        left: 100px;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/06f7df0e-74ef-416c-a4a3-f090a4c89218.png) no-repeat center / cover;
+        border-radius: 20px;
+        z-index: 18;
+        padding: 59px 60px;
+      }
+      
+      .contact-title {
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 43.568px;
+        max-width: 681px;
+      }
+      
+      .contact-form {
+        position: absolute;
+        top: 59px;
+        right: 60px;
+        width: 730px;
+      }
+      
+      .form-input {
+        width: 100%;
+        height: 70px;
+        padding: 23px 40px;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+        border: none;
+        font-family: Inter, var(--default-font);
+        font-size: 20px;
+        color: #939393;
+        margin-bottom: 16px;
+      }
+      
+      .form-textarea {
+        height: 120px;
+        resize: none;
+      }
+      
+      .submit-button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 325px;
+        height: 60px;
+        padding: 18px 26px;
+        background: #ffffff;
+        border-radius: 10px;
+        border: none;
+        font-family: Inter, var(--default-font);
+        font-size: 20px;
+        font-weight: 600;
+        color: #1e1b1b;
+        cursor: pointer;
+      }
+      
+      .submit-icon {
+        width: 48px;
+        height: 48px;
+        background: #093691;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .submit-icon img {
+        width: 30.857px;
+        height: 30.857px;
+      }
+      
+      .consent-checkbox {
+        display: flex;
+        align-items: center;
+        margin-top: 12px;
+      }
+      
+      .consent-checkbox input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
+      
+      .consent-text {
+        color: #ffffff;
+        font-family: Inter, var(--default-font);
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 13px;
+      }
+      
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      </style>
+    <section class="company-info">
+      <div class="hero-image">
+        <div class="hero-overlay">
+          <div class="hero-content"></div>
+        </div>
+        <h1 class="company-title">О компании</h1>
+        <p class="company-description">
+          <span class="highlight">ГК "ФОРКЛИФТ" – </span>официальный дилер<span class="highlight"> Asia MH Сибирь </span>по продаже<span class="highlight"> техники HELI.</span>
+        </p>
+        <article class="info-box">
+          <div class="info-content">
+            <p>Миссия нашей компании – <span class="highlight">превратить покупку спецтехники в удовольствие</span>, а ее <span class="highlight">эксплуатацию сделать беззаботной и бесперебойной</span>.</p>
+            <p>Вот почему мы всегда глубоко анализируем Ваши потребности с пожеланиями и обязательно находим для Вас самый лучший вариант. <span class="highlight">Ведь наши клиенты – это наши партнеры!</span> Мы очень дорожим нашими отношениями.</p>
+            <p>Мы не просто продаем <span class="highlight">лучшую технику на рынке</span>, мы предоставляем <span class="highlight">сервис мирового стандарта</span>. Мы сопровождаем каждую проданную единицу техники с момента ввода в эксплуатацию и на протяжении всего времени её жизни.</p>
+          </div>
+          <blockquote class="quote">«Сложные задачи решаем сразу, невозможные - чуть дольше!»</blockquote>
+        </article>
+        <div class="company-image"></div>
+        <p class="location-info">Для более удобного взаимодействия с вами офисы ГК "ФОРКЛИФТ" находятся в</p>
+        <div class="location-icon location-icon-1"></div>
+        <div class="location-icon location-icon-2"></div>
+        <div class="location-icon location-icon-3"></div>
+        <span class="location-name location-name-1">Новосибирске</span>
+        <span class="location-name location-name-2">Томске</span>
+        <span class="location-name location-name-3">Омске</span>
+      </div>
+      <section class="contact-section">
+        <h2 class="contact-title">Вам нужно быстро узнать стоимость детали, оборудования или у вас возник другой вопрос?</h2>
+        <form class="contact-form">
+          <label for="name" class="visually-hidden">Имя</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Имя" required>
+          
+          <label for="phone" class="visually-hidden">Телефон</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="Телефон" required>
+          
+          <label for="question" class="visually-hidden">Вопрос</label>
+          <textarea id="question" name="question" class="form-input form-textarea" placeholder="Вопрос" required></textarea>
+          
+          <button type="submit" class="submit-button">
+            <span>Оставить заявку</span>
+            <div class="submit-icon">
+              <img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/096eafc7-0ef7-47bd-8278-c959f78d9c6e.png" alt="Submit">
+            </div>
+          </button>
+          
+          <div class="consent-checkbox">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent" class="consent-text">Даю согласие на обработку персональных данных</label>
+          </div>
+        </form>
+      </section>
+    </section>
+    
+<style>
+  :root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+  
+  .contact-section {
+    overflow: hidden;
+    position: relative;
+    width: 1680px;
+    height: 632px;
+    margin: 0 auto;
+    font-size: 0;
+  }
+  
+  .contact-section * {
+    box-sizing: border-box;
+  }
+  
+  .contact-title {
+    display: block;
+    height: 36px;
+    margin: 0;
+    color: #1e1b1b;
+    font-family: Intro, var(--default-font-family);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .contact-description {
+    display: block;
+    height: 31px;
+    margin: 60px 0 0;
+    color: #1e1b1b;
+    font-family: Inter, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 31px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  
+  .contact-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1680px;
+    height: 465px;
+    margin: 40px 0 0;
+    z-index: 4;
+  }
+  
+  .contact-info {
+    width: 825px;
+    height: 465px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.08);
+    padding: 80px 60px;
+  }
+  
+  .info-label {
+    display: block;
+    height: 24px;
+    margin: 0 0 20px;
+    color: #1e1b1b;
+    font-family: Inter, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .info-value {
+    display: block;
+    height: 31px;
+    margin: 0 0 40px;
+    color: #093691;
+    font-family: Inter, var(--default-font-family);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 31px;
+    text-align: left;
+    white-space: nowrap;
+  }
+  
+  .contact-image {
+    width: 825px;
+    height: 465px;
+    background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/f5b78e77-91c4-4475-af0e-f6a7c6d59442.png) no-repeat center;
+    background-size: cover;
+    border-radius: 20px;
+  }
+  </style>
+  
+  <section class="contact-section">
+    <h1 class="contact-title">Контакты</h1>
+    <p class="contact-description">Мы всегда рады видеть Вас и готовы побеседовать за чашкой кофе в нашем офисе, расположенном в самом центре города.</p>
+    <div class="contact-content">
+      <article class="contact-info">
+        <h2 class="info-label">Адрес:</h2>
+        <p class="info-value">630108, г. Новосибирск, ул. Станционная, 17</p>
+        <h2 class="info-label">Телефон:</h2>
+        <p class="info-value">8(383)375-13-30</p>
+        <h2 class="info-label">E-mail:</h2>
+        <p class="info-value">sale@forkliftsib.ru</p>
+      </article>
+      <div class="contact-image" role="img" aria-label="Contact office image"></div>
+    </div>
+  </section>
+  
+    <!--End Main-->
+    <!--Footer-->
+    <style>
+      :root {
+        --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
+      }
+      
+      .footer-container {
+        position: relative;
+        width: clamp(320px, 100vw, 1920px);
+        height: 335px;
+        margin: 0 auto;
+        font-size: 0;
+        overflow: hidden;
+      }
+      
+      .footer-container * {
+        box-sizing: border-box;
+      }
+      
+      .footer-background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #093691;
+      }
+      
+      .footer-logo {
+        position: absolute;
+        width: 20.73%;
+        height: 22.99%;
+        top: 8.96%;
+        left: 73.02%;
+        background: url(https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-01-13/d2a8db10-9396-46d2-ab4c-0f34f098daee.png) no-repeat center;
+        background-size: cover;
+      }
+      
+      .footer-heading {
+        position: absolute;
+        font: 600 20px/18px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-heading-catalog { left: 6.25%; top: 14.93%; }
+      .footer-heading-about { left: 28.49%; top: 14.93%; }
+      .footer-heading-account { left: 50.78%; top: 14.93%; }
+      
+      .footer-link {
+        position: absolute;
+        font: 400 16px/14px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-link-maintenance { left: 6.25%; top: 26.27%; }
+      .footer-link-catalog { left: 6.25%; top: 34.63%; }
+      .footer-link-oils { left: 6.25%; top: 42.99%; }
+      .footer-link-equipment { left: 6.25%; top: 51.34%; }
+      
+      .footer-link-branches { left: 28.49%; top: 26.27%; }
+      .footer-link-delivery { left: 28.49%; top: 34.63%; }
+      .footer-link-payment { left: 28.49%; top: 42.99%; }
+      .footer-link-contact { left: 28.49%; top: 51.34%; }
+      
+      .footer-link-register { left: 50.78%; top: 26.27%; }
+      .footer-link-login { left: 50.78%; top: 34.63%; }
+      
+      .footer-address {
+        position: absolute;
+        width: 418px;
+        top: 37.91%;
+        left: 73.02%;
+        font: 400 20px/24.205px Inter, var(--default-font-family);
+        color: #fff;
+      }
+      
+      .footer-phone {
+        position: absolute;
+        top: 57.01%;
+        left: 73.02%;
+        font: 700 20px/24px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-copyright {
+        position: absolute;
+        font: 400 12px/10.8px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .footer-copyright-company { left: 6.25%; top: 82.09%; }
+      .footer-copyright-privacy { left: 28.49%; top: 82.09%; }
+      .footer-copyright-terms { left: 50.78%; top: 82.09%; }
+      .footer-copyright-bonus { left: 73.02%; top: 82.09%; }
+      
+      .footer-credit {
+        position: absolute;
+        left: 6.25%;
+        bottom: 28px;
+        font: 400 12px/10.8px Inter, var(--default-font-family);
+        color: #fff;
+        white-space: nowrap;
+      }
+      
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      </style>
+      
+      <footer class="footer-container">
+        <div class="footer-background"></div>
+        <div class="footer-logo" role="img" aria-label="Company logo"></div>
+        
+        <nav>
+          <h2 class="footer-heading footer-heading-catalog">Каталог</h2>
+          <ul>
+            <li><a href="#" class="footer-link footer-link-maintenance">Запчасти для технического обслуживания</a></li>
+            <li><a href="/s-catalog.html" class="footer-link footer-link-catalog">Каталог запчастей</a></li>
+            <li><a href="/f-catalog.html" class="footer-link footer-link-oils">Масла и технические жидкости</a></li>
+            <li><a href="#" class="footer-link footer-link-equipment">Спец Техника</a></li>
+          </ul>
+      
+          <h2 class="footer-heading footer-heading-about">О компании</h2>
+          <ul>
+            <li><a href="#" class="footer-link footer-link-branches">Адреса филиалов</a></li>
+            <li><a href="/delivery.html" class="footer-link footer-link-delivery">Доставка</a></li>
+            <li><a href="/payment.html" class="footer-link footer-link-payment">Оплата</a></li>
+            <li><a href="/contacts.html" class="footer-link footer-link-contact">Контактная информация</a></li>
+          </ul>
+      
+          <h2 class="footer-heading footer-heading-account">Личный кабинет</h2>
+          <ul>
+            <li><a href="/auth-connection.html" class="footer-link footer-link-register">Регистрация</a></li>
+            <li><a href="/authorisation.html" class="footer-link footer-link-login">Вход</a></li>
+          </ul>
+        </nav>
+      
+        <address class="footer-address">
+          630108, г. Новосибирск, ул.Станционная, здание 17/1, этаж 2
+        </address>
+      
+        <a href="tel:+73833751330" class="footer-phone">8(383)375-13-30</a>
+      
+        <small class="footer-copyright footer-copyright-company">© ООО «Форклифт» 2024</small>
+        <small class="footer-copyright footer-copyright-privacy">Политика конфиденциальности</small>
+        <small class="footer-copyright footer-copyright-terms">Соглашение об использовании личного кабинета</small>
+        <small class="footer-copyright footer-copyright-bonus">Положение о бонусной программе "Бонус Форклифт"</small>
+      
+        <small class="footer-credit">Сайт разработан Omega IT</small>
+      </footer>
+      <!--end footer-->
+</body>
+</html>
